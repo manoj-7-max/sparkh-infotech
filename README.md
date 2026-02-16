@@ -1,5 +1,7 @@
 # SPARKH INFOTECH - Official Website
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmanoj-7-max%2Fsparkh-infotech&project-name=sparkh-infotech&repository-name=sparkh-infotech)
+
 This is the official website codebase for **SPARKH INFOTECH**, a futuristic IT solutions company.
 
 ## 🚀 Tech Stack
