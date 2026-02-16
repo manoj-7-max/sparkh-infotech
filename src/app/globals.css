@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric-orange: #FF6B00;
+  --color-dark-navy: #0B1C2C;
+  --color-glass: rgba(255, 255, 255, 0.05);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  --keyframes-float: {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+/* Global Styles */
+body {
+  background-color: var(--color-dark-navy);
+  color: #fff;
+  font-family: var(--font-sans);
+  background-image:
+    radial-gradient(circle at top left, rgba(255, 107, 0, 0.15), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.5), transparent 40%);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+/* Custom Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(255, 107, 0, 0.6);
+}
+
+.border-glow {
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1C2C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B00;
+}
