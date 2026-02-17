@@ -24,53 +24,55 @@ const steps = [
     },
     {
         id: 3,
-        title: 'Design',
-        description: 'We create stunning, user-centric designs that blend aesthetics with functionality for an immersive experience.',
-        icon: Palette,
-        color: 'text-pink-500',
-        bg: 'bg-pink-500/10',
-        border: 'border-pink-500/20',
+        number: '01',
+        title: 'Free Consultation',
+        description: 'We discuss your business needs. You tell us what you want, and we suggest the best solution.',
+        color: 'text-blue-600',
+        bg: 'bg-blue-50'
     },
     {
-        id: 4,
+        number: '02',
+        title: 'Project Proposal',
+        description: 'We send a detailed plan with clear pricing and timelines. No hidden costs.',
+        color: 'text-purple-600',
+        bg: 'bg-purple-50'
+    },
+    {
+        number: '03',
         title: 'Development',
-        description: 'Our developers bring the design to life with clean, scalable, and high-performance code.',
-        icon: Code2,
-        color: 'text-blue-500',
-        bg: 'bg-blue-500/10',
-        border: 'border-blue-500/20',
+        description: 'Our team starts building your website, app, or installing your security system.',
+        color: 'text-yellow-600',
+        bg: 'bg-yellow-50'
     },
     {
-        id: 5,
-        title: 'Launch & Scale',
-        description: 'We deploy your solution and provide ongoing support to help your business grow and evolve.',
-        icon: Rocket,
-        color: 'text-electric-orange',
-        bg: 'bg-electric-orange/10',
-        border: 'border-electric-orange/20',
-    },
+        number: '04',
+        title: 'Launch & Support',
+        description: 'We go live! Plus, we provide free support to ensure everything runs smoothly.',
+        color: 'text-green-600',
+        bg: 'bg-green-50'
+    }
 ];
 
 export default function Process() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
-            <div className="container mx-auto px-4 max-w-6xl relative z-10">
-                <div className="text-center mb-20">
+        <section className="py-24 bg-white relative">
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-6"
+                        className="text-4xl md:text-5xl font-bold font-display text-dark-charcoal mb-4"
                     >
-                        Our <span className="text-electric-orange">Process</span>
+                        How We <span className="text-electric-blue">Work</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-gray-500 max-w-2xl mx-auto text-lg"
+                        className="text-gray-500 max-w-2xl mx-auto"
                     >
-                        From concept to reality, we follow a streamlined workflow to deliver excellence.
+                        Simple, transparent, and fast. We don’t complicate things.
                     </motion.p>
                 </div>
 
@@ -81,39 +83,16 @@ export default function Process() {
                     {/* Connecting Line (Mobile) */}
                     <div className="absolute top-0 left-8 w-1 h-full bg-gray-200 -translate-x-1/2 lg:hidden" />
 
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8">
-                        {steps.map((step, index) => (
-                            <motion.div
-                                key={step.id}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="relative flex flex-row lg:flex-col items-start lg:items-center gap-6 lg:gap-4 lg:text-center group"
-                            >
-                                {/* Step Indicator */}
-                                <div className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 ${step.bg} ${step.color} border ${step.border} backdrop-blur-xl shadow-lg`}>
-                                    <step.icon size={32} />
-                                    <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center text-sm font-bold text-gray-900 shadow-md`}>
-                                        {step.id}
-                                    </div>
-                                </div>
-
-                                {/* Content */}
-                                <div className="space-y-2 pt-2">
-                                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-electric-orange transition-colors duration-300">
-                                        {step.title}
-                                    </h3>
-                                    <p className="text-gray-500 text-sm leading-relaxed">
-                                        {step.description}
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
+                </p>
             </div>
-            {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-96 bg-electric-orange/5 blur-[100px] rounded-full pointer-events-none" />
-        </section>
+        </motion.div>
+    ))
+}
+                    </div >
+                </div >
+            </div >
+    {/* Background Glow */ }
+    < div className = "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-96 bg-electric-orange/5 blur-[100px] rounded-full pointer-events-none" />
+        </section >
     );
 }
