@@ -17,8 +17,19 @@ export default function Footer() {
                 {/* Brand */}
                 <div className="space-y-6">
                     <Link href="/" className="flex items-center gap-2 group">
-                        <div className="relative w-10 h-10 flex items-center justify-center bg-electric-orange/10 rounded-full border border-electric-orange/20">
-                            <Zap className="w-5 h-5 text-electric-orange" />
+                        <div className="relative h-10 w-auto">
+                            <img
+                                src="/logo.png"
+                                alt="SPARKH INFOTECH"
+                                className="h-full w-auto object-contain"
+                                onError={(e) => {
+                                    e.currentTarget.style.display = 'none';
+                                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                                }}
+                            />
+                            <div className="hidden flex items-center justify-center w-10 h-10 bg-electric-orange text-white rounded-xl shadow-lg">
+                                <Zap className="w-6 h-6 fill-current" />
+                            </div>
                         </div>
                         <span className="text-xl font-bold font-display tracking-wide text-gray-900">
                             SPARKH <span className="text-electric-orange">INFOTECH</span>

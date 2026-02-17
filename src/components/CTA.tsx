@@ -9,7 +9,7 @@ export default function CTA() {
             <div className="absolute inset-0 bg-electric-orange/10" />
 
             {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-dark-navy via-dark-navy/90 to-electric-orange/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-orange-50 to-orange-100/30" />
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto text-center space-y-8">
