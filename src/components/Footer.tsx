@@ -42,12 +42,18 @@ export default function Footer() {
 
                 {/* Quick Links */}
                 <div>
-                    <h3 className="font-bold text-lg mb-6">Quick Links</h3>
+                    <h3 className="font-bold text-lg mb-6 text-white font-display">Quick Links</h3>
                     <ul className="space-y-3 text-gray-400 text-sm">
-                        {['About Us', 'Our Services', 'Portfolio', 'Careers', 'Contact Us'].map((item) => (
-                            <li key={item}>
-                                <Link href={`/${item.toLowerCase().replace(' ', '-')}`} className="hover:text-electric-orange transition-colors">
-                                    {item}
+                        {[
+                            { name: 'About Us', href: '/about' },
+                            { name: 'Our Services', href: '/services' },
+                            { name: 'Portfolio', href: '/portfolio' },
+                            { name: 'Careers', href: '/careers' },
+                            { name: 'Contact Us', href: '/contact' }
+                        ].map((item) => (
+                            <li key={item.name}>
+                                <Link href={item.href} className="hover:text-electric-orange transition-colors duration-300">
+                                    {item.name}
                                 </Link>
                             </li>
                         ))}
@@ -56,12 +62,18 @@ export default function Footer() {
 
                 {/* Services */}
                 <div>
-                    <h3 className="font-bold text-lg mb-6">Services</h3>
+                    <h3 className="font-bold text-lg mb-6 text-white font-display">Services</h3>
                     <ul className="space-y-3 text-gray-400 text-sm">
-                        {['Web Development', 'Mobile Apps', 'Digital Marketing', 'Cloud Solutions', 'UI/UX Design'].map((item) => (
-                            <li key={item}>
-                                <Link href="/services" className="hover:text-electric-orange transition-colors">
-                                    {item}
+                        {[
+                            { name: 'Web Development', href: '/services' },
+                            { name: 'Mobile Apps', href: '/services' },
+                            { name: 'Digital Marketing', href: '/services' },
+                            { name: 'Cloud Solutions', href: '/services' },
+                            { name: 'UI/UX Design', href: '/services' }
+                        ].map((item) => (
+                            <li key={item.name}>
+                                <Link href={item.href} className="hover:text-electric-orange transition-colors duration-300">
+                                    {item.name}
                                 </Link>
                             </li>
                         ))}
