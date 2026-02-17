@@ -4,110 +4,142 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Zap } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'About', href: '/about' },
 ];
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            setIsScrolled(window.scrollY > 20);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
-        <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-navy/80 backdrop-blur-md shadow-lg border-b border-white/10' : 'bg-transparent'
-                }`}
-        >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-20">
+        <>
+            <motion.nav
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className={`fixed top-6 left-0 right-0 z-50 flex justify-center px-4 transition-all duration-300`}
+            >
+                <div className={`
+                    flex items-center justify-between w-full max-w-5xl px-6 py-3 rounded-full transition-all duration-500
+                    ${isScrolled
+                        ? 'bg-deep-navy/80 backdrop-blur-xl border border-white/5 shadow-2xl shadow-black/50'
+                        : 'bg-transparent border border-transparent'
+                    }
+                `}>
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2 group">
-                        <div className="relative w-10 h-10 flex items-center justify-center bg-electric-orange/10 rounded-full border border-electric-orange/20 group-hover:border-electric-orange transition-colors duration-300">
-                            <Zap className="w-6 h-6 text-electric-orange" />
-                            <div className="absolute inset-0 bg-electric-orange/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <Link href="/" className="flex items-center gap-2 group z-50">
+                        <div className="relative flex items-center justify-center w-8 h-8 bg-gradient-to-br from-electric-orange to-amber-500 rounded-lg shadow-lg shadow-orange-500/20 group-hover:shadow-orange-500/40 transition-shadow">
+                            <Zap className="w-5 h-5 text-white fill-white" />
                         </div>
-                        <span className="text-xl font-bold tracking-wide font-display">
-                            SPARKH <span className="text-electric-orange">INFOTECH</span>
+                        <span className="text-lg font-bold tracking-tight text-white font-display">
+                            SPARKH
                         </span>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className="relative text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm tracking-wide group"
-                            >
-                                {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-electric-orange transition-all duration-300 group-hover:w-full" />
-                            </Link>
-                        ))}
+                    <div className="hidden md:flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/5 backdrop-blur-md">
+                        {navLinks.map((link) => {
+                            const isActive = pathname === link.href;
+                            return (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    className={`
+                                        relative px-5 py-2 rounded-full text-sm font-medium transition-all duration-300
+                                        ${isActive ? 'text-white' : 'text-gray-400 hover:text-white'}
+                                    `}
+                                >
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="nav-pill"
+                                            className="absolute inset-0 bg-white/10 rounded-full"
+                                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10">{link.name}</span>
+                                </Link>
+                            )
+                        })}
+                    </div>
 
+                    {/* CTA Button */}
+                    <div className="hidden md:block">
                         <Link
                             href="/contact"
-                            className="bg-electric-orange text-white px-6 py-2 rounded-full font-medium hover:bg-orange-600 transition-colors duration-300 shadow-lg shadow-electric-orange/20 hover:shadow-electric-orange/40 transform hover:-translate-y-0.5"
+                            className="bg-white text-deep-navy px-5 py-2.5 rounded-full text-sm font-bold hover:bg-gray-100 transition-colors"
                         >
-                            Get Quote
+                            Let's Talk
                         </Link>
                     </div>
 
-                    {/* Mobile Menu Button */}
+                    {/* Mobile Menu Toggle */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
+                        className="md:hidden p-2 text-white/80 hover:text-white z-50"
                     >
                         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
-            </div>
+            </motion.nav>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-dark-navy/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-40 bg-deep-navy/95 backdrop-blur-2xl flex items-center justify-center md:hidden"
                     >
-                        <div className="px-4 pt-2 pb-6 space-y-2">
-                            {navLinks.map((link) => (
-                                <Link
+                        <div className="flex flex-col items-center gap-8 p-4">
+                            {navLinks.map((link, i) => (
+                                <motion.div
                                     key={link.name}
-                                    href={link.href}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.1 + i * 0.1 }}
                                 >
-                                    {link.name}
-                                </Link>
+                                    <Link
+                                        href={link.href}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="text-3xl font-display font-bold text-white/80 hover:text-white hover:text-electric-orange transition-colors"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </motion.div>
                             ))}
-                            <div className="pt-4 px-4">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.4 }}
+                            >
                                 <Link
                                     href="/contact"
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block w-full text-center bg-electric-orange text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-600 transition-colors"
+                                    className="block mt-4 px-8 py-3 bg-electric-orange text-white rounded-full font-bold text-lg"
                                 >
-                                    Get Quote
+                                    Start Project
                                 </Link>
-                            </div>
+                            </motion.div>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 }

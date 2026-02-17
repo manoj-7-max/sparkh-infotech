@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CTA from '@/components/CTA';
 
 const timeline = [
     { year: '2019', title: 'Inception', description: 'SPARKH INFOTECH was founded with a vision to revolutionize the digital landscape.' },
@@ -92,6 +93,7 @@ export default function About() {
                 </div>
             </section>
 
+            <CTA />
             <Footer />
         </main>
     );

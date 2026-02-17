@@ -1,94 +1,67 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Monitor, Smartphone, Cloud, PenTool, Database, BarChart3, CheckCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Monitor, Smartphone, Globe, Code, PenTool, Database } from 'lucide-react';
 
 const services = [
     {
-        icon: Monitor,
-        title: 'Website Development',
-        description: 'Custom, high-performance websites built with Next.js and React tailored to your brand.',
-        color: 'text-blue-500',
+        title: 'Websites',
+        description: 'Blazing fast, SEO-optimized web experiences.',
+        icon: Globe,
+        color: 'text-blue-400'
     },
     {
+        title: 'Mobile Apps',
+        description: 'Native & cross-platform apps for iOS and Android.',
         icon: Smartphone,
-        title: 'Mobile App Development',
-        description: 'Native and cross-platform mobile apps for iOS and Android using Flutter and React Native.',
-        color: 'text-green-500',
+        color: 'text-green-400'
     },
     {
-        icon: Cloud,
-        title: 'Cloud Solutions',
-        description: 'Secure, scalable cloud infrastructure and migration services on AWS, Azure, and Google Cloud.',
-        color: 'text-purple-500',
+        title: 'Custom Software',
+        description: 'Tailored solutions to automate your business.',
+        icon: Code,
+        color: 'text-electric-orange'
     },
     {
-        icon: PenTool,
         title: 'UI/UX Design',
-        description: 'User-centric design that enhances engagement and delivers intuitive digital experiences.',
-        color: 'text-pink-500',
-    },
-    {
-        icon: Database,
-        title: 'Software Development',
-        description: 'Enterprise-grade software solutions to streamline operations and boost productivity.',
-        color: 'text-orange-500',
-    },
-    {
-        icon: BarChart3,
-        title: 'Digital Marketing',
-        description: 'Data-driven marketing strategies to increase visibility, leads, and conversions.',
-        color: 'text-yellow-500',
-    },
+        description: 'Intuitive designs that users fall in love with.',
+        icon: PenTool,
+        color: 'text-pink-400'
+    }
 ];
 
 export default function Services() {
     return (
-        <section className="py-24 bg-dark-navy relative overflow-hidden" id="services">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-electric-orange/5 rounded-full blur-3xl opacity-20" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl opacity-20" />
-
-            <div className="container mx-auto px-4 z-10 relative">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight text-white mb-4">
-                        Our Core <span className="text-electric-orange">Services</span>
-                    </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
-                        Comprehensive digital solutions designed to propel your business forward in the digital age.
-                    </p>
+        <section className="py-32 bg-deep-navy relative">
+            <div className="container mx-auto px-4 max-w-6xl">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div>
+                        <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">
+                            Our <span className="text-electric-orange">Expertise</span>
+                        </h2>
+                        <p className="text-gray-400 max-w-md">
+                            Comprehensive digital solutions designed to help your business grow and succeed in the modern era.
+                        </p>
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-electric-orange/50 transition-all duration-300 hover:bg-white/10"
+                            whileHover={{ y: -5 }}
+                            className="group p-8 rounded-3xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.05] hover:border-white/10 transition-all duration-300"
                         >
-                            <div className={`p-4 rounded-xl bg-white/5 w-fit mb-6 group-hover:bg-electric-orange/10 transition-colors ${service.color}`}>
-                                <service.icon className="w-8 h-8" />
+                            <div className={`mb-6 p-3 rounded-2xl bg-white/5 w-fit ${service.color}`}>
+                                <service.icon size={24} />
                             </div>
-
-                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-electric-orange transition-colors">
-                                {service.title}
-                            </h3>
-
-                            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                            <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                            <p className="text-sm text-gray-400 leading-relaxed text-balance">
                                 {service.description}
                             </p>
-
-                            <Link
-                                href="/services"
-                                className="inline-flex items-center text-sm font-medium text-electric-orange hover:text-white transition-colors"
-                            >
-                                Learn More <CheckCircle className="w-4 h-4 ml-2" />
-                            </Link>
-
-                            {/* Glow Effect */}
-                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-electric-orange/0 via-transparent to-transparent group-hover:from-electric-orange/5 transition-all duration-500 pointer-events-none" />
                         </motion.div>
                     ))}
                 </div>

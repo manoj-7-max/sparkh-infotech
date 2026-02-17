@@ -1,76 +1,123 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Zap } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, Code2, Cpu, Globe } from 'lucide-react';
 import Link from 'next/link';
+import { useRef } from 'react';
 
 export default function Hero() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scrollY } = useScroll();
+
+    // Parallax effects
+    const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+    const y2 = useTransform(scrollY, [0, 500], [0, -150]);
+    const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark-navy pt-20">
-            {/* Background Effect */}
+        <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-navy pt-20">
+            {/* Abstract Background Elements */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute -top-24 -left-24 w-96 h-96 bg-electric-orange/20 rounded-full blur-3xl opacity-50 animate-pulse" />
-                <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl opacity-30 animate-pulse delay-1000" />
-                <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl opacity-30 animate-pulse delay-2000" />
+                {/* Grid */}
+                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+
+                {/* Glowing Orbs */}
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.3, 0.5, 0.3],
+                    }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -top-[20%] -left-[10%] w-[50vw] h-[50vw] bg-blue-600/10 rounded-full blur-[120px]"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.1, 1],
+                        opacity: [0.2, 0.4, 0.2],
+                    }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                    className="absolute top-[20%] -right-[10%] w-[40vw] h-[40vw] bg-electric-orange/10 rounded-full blur-[100px]"
+                />
             </div>
 
-            <div className="container mx-auto px-4 z-10 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="max-w-4xl mx-auto space-y-8"
-                >
+            {/* Floating Elements (Decorative) */}
+            <motion.div style={{ y: y1 }} className="absolute top-32 left-10 md:left-20 opacity-20 md:opacity-40">
+                <Code2 size={48} className="text-white rotate-12" />
+            </motion.div>
+            <motion.div style={{ y: y2 }} className="absolute bottom-32 right-10 md:right-20 opacity-20 md:opacity-40">
+                <Cpu size={48} className="text-electric-orange -rotate-12" />
+            </motion.div>
+
+            <div className="container mx-auto px-4 z-10">
+                <div className="max-w-5xl mx-auto text-center space-y-8">
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-sm font-medium text-electric-orange mb-4">
-                        <Zap className="w-4 h-4" />
-                        <span>Powering Ideas with Technology</span>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
+                    >
+                        <span className="flex h-2 w-2 relative">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric-orange opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-electric-orange"></span>
+                        </span>
+                        <span className="text-xs font-medium text-gray-300 tracking-wide uppercase">Next-Gen Digital Solutions</span>
+                    </motion.div>
 
                     {/* Headline */}
-                    <h1 className="text-5xl md:text-7xl font-bold font-display tracking-tight leading-tight">
-                        Ignite Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-orange to-yellow-400">Digital Future</span> with SPARKH
-                    </h1>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight leading-[1.1]"
+                    >
+                        We Craft <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500">Digital Reality</span>
+                    </motion.h1>
 
                     {/* Subtext */}
-                    <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                        We build futuristic, high-performance websites and apps that drive growth.
-                        Transform your business with cutting-edge IT solutions.
-                    </p>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
+                    >
+                        Sparkh Infotech merges creative design with powerful engineering to build brands that stand out in the noise.
+                    </motion.p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+                    >
                         <Link
                             href="/contact"
-                            className="group relative px-8 py-4 bg-electric-orange text-white rounded-full font-semibold overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(255,107,0,0.3)] hover:shadow-[0_0_40px_rgba(255,107,0,0.5)]"
+                            className="group relative px-8 py-4 bg-white text-deep-navy rounded-full font-bold overflow-hidden transition-all hover:scale-105"
                         >
                             <span className="relative z-10 flex items-center gap-2">
-                                Get a Free Quote <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                Start a Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </Link>
 
                         <Link
-                            href="/services"
-                            className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-semibold hover:bg-white/10 transition-all backdrop-blur-sm"
+                            href="/portfolio"
+                            className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm"
                         >
-                            Explore Services
+                            View Our Work
                         </Link>
-                    </div>
-                </motion.div>
+                    </motion.div>
+                </div>
             </div>
 
             {/* Scroll Indicator */}
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, y: [0, 10, 0] }}
-                transition={{ delay: 1, duration: 2, repeat: Infinity }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500"
+                style={{ opacity }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             >
-                <div className="flex flex-col items-center gap-2">
-                    <span className="text-xs uppercase tracking-widest">Scroll</span>
-                    <ChevronDown className="w-6 h-6" />
-                </div>
+                <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
+                <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500">Scroll</span>
             </motion.div>
         </section>
     );

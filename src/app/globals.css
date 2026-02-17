@@ -2,13 +2,17 @@
 
 @theme {
   --color-electric-orange: #FF6B00;
-  --color-dark-navy: #0B1C2C;
-  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-deep-navy: #020617;
+  --color-slate-800: #1e293b;
+  --color-glass: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.05);
 
   --font-sans: var(--font-inter);
   --font-display: var(--font-poppins);
 
   --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-slide-up: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
   --keyframes-float: {
 
@@ -21,65 +25,88 @@
       transform: translateY(-20px);
     }
   }
+
+  --keyframes-glow: {
+    from {
+      box-shadow: 0 0 10px -5px #FF6B00;
+    }
+
+    to {
+      box-shadow: 0 0 25px 5px rgba(255, 107, 0, 0.3);
+    }
+  }
+
+  --keyframes-slideUp: {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 /* Global Styles */
 body {
-  background-color: var(--color-dark-navy);
+  background-color: var(--color-deep-navy);
   color: #fff;
   font-family: var(--font-sans);
-  background-image:
-    radial-gradient(circle at top left, rgba(255, 107, 0, 0.15), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.5), transparent 40%);
-  min-height: 100vh;
+  overflow-x: hidden;
+  selection-background-color: rgba(255, 107, 0, 0.3);
+  selection-color: #fff;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-display);
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Custom Utilities */
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-
-.glass-card {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
-
-.text-glow {
-  text-shadow: 0 0 20px rgba(255, 107, 0, 0.6);
-}
-
-.border-glow {
-  box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
-}
-
-/* Scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B1C2C;
+  background: var(--color-deep-navy);
 }
 
 ::-webkit-scrollbar-thumb {
   background: #334155;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF6B00;
+  background: var(--color-electric-orange);
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--color-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #fff, #94a3b8);
+}
+
+.text-gradient-orange {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #FF6B00, #F59E0B);
+}
+
+/* Grid Background */
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }

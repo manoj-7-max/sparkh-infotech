@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CTA from '@/components/CTA';
 import { Monitor, Smartphone, Cloud, PenTool, Database, BarChart3, ShieldCheck, Server } from 'lucide-react';
 import Link from 'next/link';
 
@@ -118,6 +119,7 @@ export default function Services() {
                 </div>
             </section>
 
+            <CTA />
             <Footer />
         </main>
     );

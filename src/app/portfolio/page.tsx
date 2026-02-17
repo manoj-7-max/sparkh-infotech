@@ -82,8 +82,8 @@ export default function Portfolio() {
                                 key={category}
                                 onClick={() => setActiveCategory(category)}
                                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${activeCategory === category
-                                        ? 'bg-electric-orange text-white'
-                                        : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+                                    ? 'bg-electric-orange text-white'
+                                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
                                     }`}
                             >
                                 {category}
@@ -101,22 +101,33 @@ export default function Portfolio() {
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.3 }}
-                                className="group relative rounded-2xl overflow-hidden aspect-video bg-white/5 border border-white/10"
+                                className="group relative rounded-2xl overflow-hidden aspect-video bg-white/5 border border-white/10 hover:border-electric-orange/50 transition-colors duration-500"
                             >
-                                {/* Image Placeholder */}
-                                <div className={`w-full h-full ${project.image} opacity-80 group-hover:opacity-100 transition-opacity duration-500`} />
+                                {/* Background with Gradient & Pattern */}
+                                <div className={`w-full h-full ${project.image} opacity-60 group-hover:opacity-80 transition-opacity duration-500`}>
+                                    <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
+                                </div>
 
-                                {/* Overlay */}
-                                <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                    <span className="text-xs font-bold text-electric-orange uppercase tracking-wider mb-2">{project.category}</span>
-                                    <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                                    <p className="text-sm text-gray-300 mb-4 line-clamp-2">{project.description}</p>
-                                    <div className="flex gap-4">
-                                        <button className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
-                                            <ExternalLink size={18} />
+                                {/* Content Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-dark-navy via-dark-navy/50 to-transparent flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                    <div className="transform transition-all duration-300 group-hover:-translate-y-2">
+                                        <span className="inline-block px-3 py-1 rounded-full bg-electric-orange/20 border border-electric-orange/30 text-xs font-bold text-electric-orange uppercase tracking-wider mb-3">
+                                            {project.category}
+                                        </span>
+                                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-electric-orange transition-colors">
+                                            {project.title}
+                                        </h3>
+                                        <p className="text-sm text-gray-300 line-clamp-2 mb-4 group-hover:text-white transition-colors">
+                                            {project.description}
+                                        </p>
+                                    </div>
+
+                                    <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0 delay-75">
+                                        <button className="flex-1 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 backdrop-blur-sm border border-white/10">
+                                            <ExternalLink size={16} /> View Demo
                                         </button>
-                                        <button className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
-                                            <Github size={18} />
+                                        <button className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors backdrop-blur-sm border border-white/10">
+                                            <Github size={20} />
                                         </button>
                                     </div>
                                 </div>
