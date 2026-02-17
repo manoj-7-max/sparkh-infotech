@@ -7,10 +7,10 @@ import { useState, useEffect } from 'react';
 const testimonials = [
     {
         id: 1,
-        name: "Rajesh Kumar",
-        role: "CEO, TechFlow Solutions",
-        content: "Sparkh Infotech transformed our digital presence. Their team is incredibly talented and delivered our project ahead of schedule. The new website has significantly increased our lead generation.",
-        initial: "R"
+        name: "Manoj",
+        role: "Founder, Sparkh Infotech",
+        content: "We are committed to delivering excellence. Our team works tirelessly to ensure every project meets the highest standards of quality and innovation.",
+        initial: "M"
     },
     {
         id: 2,
@@ -39,7 +39,7 @@ export default function Testimonials() {
     }, []);
 
     return (
-        <section className="py-24 bg-dark-navy relative overflow-hidden">
+        <section className="py-24 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 max-w-5xl relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-6">

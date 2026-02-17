@@ -103,9 +103,11 @@ export default function Footer() {
             <div className="w-full border-t border-white/5 bg-black/20 backdrop-blur-sm py-6">
                 <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
                     <p>© {currentYear} SPARKH INFOTECH. All rights reserved.</p>
-                    <div className="flex space-x-6 mt-4 md:mt-0">
+                    <div className="flex flex-wrap justify-center space-x-6 mt-4 md:mt-0">
                         <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+                        <Link href="/admin" className="hover:text-white transition-colors">Admin Panel</Link>
+                        <Link href="/staff" className="hover:text-white transition-colors">Staff Panel</Link>
                     </div>
                 </div>
             </div>
