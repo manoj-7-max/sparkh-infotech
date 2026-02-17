@@ -42,7 +42,7 @@ export default function Hero() {
 
             {/* Floating Elements (Decorative) */}
             <motion.div style={{ y: y1 }} className="absolute top-32 left-10 md:left-20 opacity-20 md:opacity-40">
-                <Code2 size={48} className="text-white rotate-12" />
+                <Code2 size={48} className="text-gray-400 rotate-12" />
             </motion.div>
             <motion.div style={{ y: y2 }} className="absolute bottom-32 right-10 md:right-20 opacity-20 md:opacity-40">
                 <Cpu size={48} className="text-electric-orange -rotate-12" />
@@ -55,13 +55,13 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 shadow-sm backdrop-blur-sm"
                     >
                         <span className="flex h-2 w-2 relative">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric-orange opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-electric-orange"></span>
                         </span>
-                        <span className="text-xs font-medium text-gray-300 tracking-wide uppercase">Next-Gen Digital Solutions</span>
+                        <span className="text-xs font-medium text-gray-500 tracking-wide uppercase">Next-Gen Digital Solutions</span>
                     </motion.div>
 
                     {/* Headline */}
@@ -69,10 +69,10 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight leading-[1.1]"
+                        className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight leading-[1.1] text-gray-900"
                     >
                         We Craft <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500">Digital Reality</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-orange to-orange-600">Digital Reality</span>
                     </motion.h1>
 
                     {/* Subtext */}
@@ -94,7 +94,7 @@ export default function Hero() {
                     >
                         <Link
                             href="/contact"
-                            className="group relative px-8 py-4 bg-white text-deep-navy rounded-full font-bold overflow-hidden transition-all hover:scale-105"
+                            className="group relative px-8 py-4 bg-electric-orange text-white rounded-full font-bold overflow-hidden transition-all hover:bg-orange-600 hover:scale-105 shadow-lg shadow-orange-500/20"
                         >
                             <span className="relative z-10 flex items-center gap-2">
                                 Start a Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -103,7 +103,7 @@ export default function Hero() {
 
                         <Link
                             href="/portfolio"
-                            className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm"
+                            className="px-8 py-4 bg-white border border-gray-200 text-gray-900 rounded-full font-bold hover:bg-gray-50 transition-all shadow-sm"
                         >
                             View Our Work
                         </Link>
