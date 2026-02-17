@@ -15,11 +15,11 @@ export default function Hero() {
     const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
     return (
-        <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-navy pt-20">
+        <section ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20">
             {/* Abstract Background Elements */}
             <div className="absolute inset-0 z-0">
                 {/* Grid */}
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]" />
 
                 {/* Glowing Orbs */}
                 <motion.div
@@ -28,7 +28,7 @@ export default function Hero() {
                         opacity: [0.3, 0.5, 0.3],
                     }}
                     transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-[20%] -left-[10%] w-[50vw] h-[50vw] bg-blue-600/10 rounded-full blur-[120px]"
+                    className="absolute -top-[20%] -left-[10%] w-[50vw] h-[50vw] bg-blue-100/50 rounded-full blur-[120px]"
                 />
                 <motion.div
                     animate={{
@@ -36,16 +36,16 @@ export default function Hero() {
                         opacity: [0.2, 0.4, 0.2],
                     }}
                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                    className="absolute top-[20%] -right-[10%] w-[40vw] h-[40vw] bg-electric-orange/10 rounded-full blur-[100px]"
+                    className="absolute top-[20%] -right-[10%] w-[40vw] h-[40vw] bg-orange-100/50 rounded-full blur-[100px]"
                 />
             </div>
 
             {/* Floating Elements (Decorative) */}
             <motion.div style={{ y: y1 }} className="absolute top-32 left-10 md:left-20 opacity-20 md:opacity-40">
-                <Code2 size={48} className="text-gray-400 rotate-12" />
+                <Code2 size={48} className="text-gray-200 rotate-12" />
             </motion.div>
             <motion.div style={{ y: y2 }} className="absolute bottom-32 right-10 md:right-20 opacity-20 md:opacity-40">
-                <Cpu size={48} className="text-electric-orange -rotate-12" />
+                <Cpu size={48} className="text-gray-200 -rotate-12" />
             </motion.div>
 
             <div className="container mx-auto px-4 z-10">
@@ -80,7 +80,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
+                        className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
                     >
                         Sparkh Infotech merges creative design with powerful engineering to build brands that stand out in the noise.
                     </motion.p>

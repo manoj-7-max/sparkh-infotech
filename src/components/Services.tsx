@@ -32,7 +32,7 @@ const services = [
 
 export default function Services() {
     return (
-        <section className="py-32 bg-deep-navy relative">
+        <section className="py-32 bg-gray-50 relative">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
