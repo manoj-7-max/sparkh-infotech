@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CTA from '@/components/CTA';
+import FAQ from '@/components/FAQ';
 import { Monitor, Smartphone, Cloud, PenTool, Database, BarChart3, ShieldCheck, Server } from 'lucide-react';
 import Link from 'next/link';
 
@@ -60,16 +61,16 @@ const services = [
 
 export default function Services() {
     return (
-        <main className="bg-white min-h-screen">
+        <main className="bg-dark-navy min-h-screen">
             <Navbar />
 
             <section className="pt-32 pb-20 px-4">
                 <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-16">
-                        <h1 className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-4">
+                        <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">
                             Our <span className="text-electric-orange">Expertise</span>
                         </h1>
-                        <p className="text-gray-500 max-w-2xl mx-auto">
+                        <p className="text-gray-400 max-w-2xl mx-auto">
                             Solutions designed to scale with your business.
                         </p>
                     </div>
@@ -81,35 +82,35 @@ export default function Services() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="group relative p-8 rounded-2xl bg-white border border-gray-100 hover:border-electric-orange/50 transition-all duration-300 hover:shadow-xl flex flex-col h-full"
+                                className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-electric-orange/50 transition-all duration-300 hover:bg-white/10 flex flex-col h-full"
                             >
-                                <div className={`p-4 rounded-xl bg-gray-50 w-fit mb-6 group-hover:bg-electric-orange/10 transition-colors ${service.color}`}>
+                                <div className={`p-4 rounded-xl bg-white/5 w-fit mb-6 group-hover:bg-electric-orange/10 transition-colors ${service.color}`}>
                                     <service.icon className="w-8 h-8" />
                                 </div>
 
-                                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-electric-orange transition-colors">
+                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-electric-orange transition-colors">
                                     {service.title}
                                 </h3>
 
-                                <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
+                                <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
                                     {service.description}
                                 </p>
 
                                 <div className="mb-6 space-y-2">
                                     {service.features.map((feature) => (
-                                        <div key={feature} className="flex items-center text-sm text-gray-500">
+                                        <div key={feature} className="flex items-center text-sm text-gray-400">
                                             <div className="w-1.5 h-1.5 rounded-full bg-electric-orange mr-2" />
                                             {feature}
                                         </div>
                                     ))}
                                 </div>
 
-                                <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
+                                <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between">
                                     <div>
-                                        <span className="text-xs text-gray-400 uppercase tracking-wide">Starting from</span>
-                                        <div className="text-lg font-bold text-gray-900">{service.price}</div>
+                                        <span className="text-xs text-gray-500 uppercase tracking-wide">Starting from</span>
+                                        <div className="text-lg font-bold text-white">{service.price}</div>
                                     </div>
-                                    <Link href="/contact" className="px-4 py-2 rounded-lg bg-gray-50 hover:bg-electric-orange text-gray-900 hover:text-white text-sm font-medium transition-colors">
+                                    <Link href="/contact" className="px-4 py-2 rounded-lg bg-white/5 hover:bg-electric-orange text-white text-sm font-medium transition-colors">
                                         Book Now
                                     </Link>
                                 </div>
@@ -119,6 +120,7 @@ export default function Services() {
                 </div>
             </section>
 
+            <FAQ />
             <CTA />
             <Footer />
         </main>

@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CTA from '@/components/CTA';
+import FAQ from '@/components/FAQ';
 import { Check, Star, Zap, Crown } from 'lucide-react';
 import Link from 'next/link';
 
@@ -121,6 +123,8 @@ export default function Pricing() {
                 </div>
             </section>
 
+            <FAQ />
+            <CTA />
             <Footer />
         </main>
     );

@@ -9,14 +9,14 @@ export default function CTA() {
             <div className="absolute inset-0 bg-electric-orange/10" />
 
             {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-orange-50 to-orange-100/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-dark-navy via-dark-navy/90 to-electric-orange/20" />
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto text-center space-y-8">
-                    <h2 className="text-4xl md:text-5xl font-bold font-display text-gray-900 leading-tight">
+                    <h2 className="text-4xl md:text-5xl font-bold font-display text-white leading-tight">
                         Ready to <span className="text-electric-orange">Ignite</span> Your Digital Presence?
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">
                         Join hundreds of successful businesses who have transformed their ideas into reality with Sparkh Infotech.
                     </p>
 
@@ -32,7 +32,7 @@ export default function CTA() {
 
                         <Link
                             href="/portfolio"
-                            className="px-8 py-4 bg-white border border-gray-200 text-gray-900 rounded-full font-bold text-lg hover:bg-gray-50 transition-all shadow-sm"
+                            className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
                         >
                             View Our Work
                         </Link>

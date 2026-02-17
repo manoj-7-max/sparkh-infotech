@@ -1,68 +1,61 @@
 'use client';
 
-import { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { Users, FileText, Briefcase, Activity } from 'lucide-react';
 
-export default function AdminPage() {
-    const [password, setPassword] = useState('');
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+const stats = [
+    { label: 'Total Leads', value: '142', icon: Users, color: 'text-blue-500' },
+    { label: 'Active Projects', value: '12', icon: Briefcase, color: 'text-green-500' },
+    { label: 'Blog Posts', value: '24', icon: FileText, color: 'text-purple-500' },
+    { label: 'Visits Today', value: '1,204', icon: Activity, color: 'text-orange-500' },
+];
 
-    const handleLogin = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (password === 'admin123') { // Simple hardcoded password for demo
-            setIsAuthenticated(true);
-        } else {
-            alert('Incorrect Password');
-        }
-    };
-
-    if (!isAuthenticated) {
-        return (
-            <main className="min-h-screen bg-white">
-                <Navbar />
-                <div className="flex items-center justify-center min-h-[60vh] pt-20">
-                    <form onSubmit={handleLogin} className="p-8 bg-white border border-gray-200 rounded-2xl shadow-xl max-w-md w-full">
-                        <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center">Admin Login</h1>
-                        <input
-                            type="password"
-                            placeholder="Enter Admin Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="w-full p-3 border border-gray-300 rounded-lg mb-4 text-gray-900 focus:outline-none focus:ring-2 focus:ring-electric-orange"
-                        />
-                        <button type="submit" className="w-full py-3 bg-electric-orange text-white font-bold rounded-lg hover:bg-orange-600 transition-colors">
-                            Login
-                        </button>
-                    </form>
-                </div>
-                <Footer />
-            </main>
-        );
-    }
-
+export default function AdminDashboard() {
     return (
-        <main className="min-h-screen bg-white">
-            <Navbar />
-            <div className="container mx-auto px-4 pt-32 pb-20">
-                <h1 className="text-4xl font-bold text-gray-900 mb-8">Admin Dashboard</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Dashboard Cards */}
-                    <div className="p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">Total Users</h3>
-                        <p className="text-3xl font-bold text-electric-orange">1,234</p>
+        <div className="space-y-8">
+            <h1 className="text-3xl font-bold font-display text-white">Dashboard Overview</h1>
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {stats.map((stat) => (
+                    <div key={stat.label} className="p-6 rounded-xl bg-gray-800 border border-gray-700 hover:border-orange-500/50 transition-colors">
+                        <div className="flex items-center justify-between mb-4">
+                            <span className={`p-3 rounded-lg bg-gray-700/50 ${stat.color}`}>
+                                <stat.icon className="w-6 h-6" />
+                            </span>
+                            <span className="text-sm font-medium text-gray-400">Since last week</span>
+                        </div>
+                        <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                        <div className="text-gray-400 text-sm">{stat.label}</div>
                     </div>
-                    <div className="p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">Active Projects</h3>
-                        <p className="text-3xl font-bold text-electric-orange">12</p>
-                    </div>
-                    <div className="p-6 bg-white border border-gray-200 rounded-xl shadow-sm">
-                        <h3 className="text-lg font-bold text-gray-900 mb-2">Pending Inquiries</h3>
-                        <p className="text-3xl font-bold text-electric-orange">5</p>
-                    </div>
+                ))}
+            </div>
+
+            {/* Recent Activity */}
+            <div className="bg-gray-800 rounded-xl border border-gray-700 p-6">
+                <h2 className="text-xl font-bold text-white mb-6">Recent Inquiries</h2>
+                <div className="overflow-x-auto">
+                    <table className="w-full text-left text-sm text-gray-400">
+                        <thead className="bg-gray-700/50 uppercase text-xs text-gray-300">
+                            <tr>
+                                <th className="px-6 py-3 rounded-tl-lg">Name</th>
+                                <th className="px-6 py-3">Service</th>
+                                <th className="px-6 py-3">Date</th>
+                                <th className="px-6 py-3 rounded-tr-lg">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-700">
+                            {[1, 2, 3, 4, 5].map((i) => (
+                                <tr key={i} className="hover:bg-gray-700/30 transition-colors">
+                                    <td className="px-6 py-4 font-medium text-white">Example Client {i}</td>
+                                    <td className="px-6 py-4">Web Development</td>
+                                    <td className="px-6 py-4">Feb 16, 2026</td>
+                                    <td className="px-6 py-4 text-orange-500 hover:underline cursor-pointer">View</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <Footer />
-        </main>
+        </div>
     );
 }

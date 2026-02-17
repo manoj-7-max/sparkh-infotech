@@ -7,10 +7,10 @@ import { useState, useEffect } from 'react';
 const testimonials = [
     {
         id: 1,
-        name: "Manoj",
-        role: "Founder, Sparkh Infotech",
-        content: "We are committed to delivering excellence. Our team works tirelessly to ensure every project meets the highest standards of quality and innovation.",
-        initial: "M"
+        name: "Rajesh Kumar",
+        role: "CEO, TechFlow Solutions",
+        content: "Sparkh Infotech transformed our digital presence. Their team is incredibly talented and delivered our project ahead of schedule. The new website has significantly increased our lead generation.",
+        initial: "R"
     },
     {
         id: 2,
@@ -39,13 +39,13 @@ export default function Testimonials() {
     }, []);
 
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section className="py-24 bg-dark-navy relative overflow-hidden">
             <div className="container mx-auto px-4 max-w-5xl relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-6">
                         Client <span className="text-electric-orange">Stories</span>
                     </h2>
-                    <p className="text-gray-500">See what our partners have to say about working with us.</p>
+                    <p className="text-gray-400">See what our partners have to say about working with us.</p>
                 </div>
 
                 <div className="relative h-[400px] md:h-[300px]">
@@ -59,19 +59,19 @@ export default function Testimonials() {
                                 scale: activeIndex === index ? 1 : 0.95
                             }}
                             transition={{ duration: 0.5 }}
-                            className={`absolute inset-0 flex flex-col items-center justify-center p-8 md:p-12 rounded-3xl border border-gray-100 bg-white/80 backdrop-blur-sm shadow-xl ${activeIndex !== index ? 'pointer-events-none' : ''}`}
+                            className={`absolute inset-0 flex flex-col items-center justify-center p-8 md:p-12 rounded-3xl border border-white/5 bg-white/5 backdrop-blur-sm ${activeIndex !== index ? 'pointer-events-none' : ''}`}
                         >
                             <Quote size={48} className="text-electric-orange/20 mb-6" />
-                            <p className="text-lg md:text-xl text-gray-600 text-center italic mb-8 max-w-2xl leading-relaxed">
+                            <p className="text-lg md:text-xl text-gray-300 text-center italic mb-8 max-w-2xl leading-relaxed">
                                 "{testimonial.content}"
                             </p>
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-electric-orange to-pink-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-electric-orange to-pink-500 flex items-center justify-center text-white font-bold text-lg">
                                     {testimonial.initial}
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                                    <p className="text-sm text-electric-orange font-medium">{testimonial.role}</p>
+                                    <h4 className="font-bold text-white">{testimonial.name}</h4>
+                                    <p className="text-sm text-electric-orange">{testimonial.role}</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -84,7 +84,7 @@ export default function Testimonials() {
                         <button
                             key={index}
                             onClick={() => setActiveIndex(index)}
-                            className={`w-3 h-3 rounded-full transition-colors duration-300 ${activeIndex === index ? 'bg-electric-orange' : 'bg-gray-200 hover:bg-gray-300'}`}
+                            className={`w-3 h-3 rounded-full transition-colors duration-300 ${activeIndex === index ? 'bg-electric-orange' : 'bg-white/10 hover:bg-white/20'}`}
                         />
                     ))}
                 </div>
