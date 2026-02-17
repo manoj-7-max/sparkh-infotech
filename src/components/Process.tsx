@@ -53,7 +53,7 @@ const steps = [
 
 export default function Process() {
     return (
-        <section className="py-24 relative overflow-hidden">
+        <section className="py-24 bg-white relative overflow-hidden">
             <div className="container mx-auto px-4 max-w-6xl relative z-10">
                 <div className="text-center mb-20">
                     <motion.h2
