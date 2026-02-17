@@ -1,33 +1,45 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Monitor, Smartphone, Globe, Code, PenTool, Database } from 'lucide-react';
+import { Monitor, Smartphone, Globe, Code, PenTool, Database, ShieldCheck, ShoppingBag, Cpu } from 'lucide-react';
 
 const services = [
     {
+        title: 'CCTV Security',
+        description: 'Advanced surveillance systems for homes, shops, and offices. Remote monitoring enabled.',
+        icon: ShieldCheck,
+        color: 'text-red-500'
+    },
+    {
         title: 'Websites',
-        description: 'Blazing fast, SEO-optimized web experiences.',
+        description: 'High-speed business websites that rank on Google and convert visitors into customers.',
         icon: Globe,
-        color: 'text-blue-400'
+        color: 'text-blue-500'
+    },
+    {
+        title: 'POS Systems',
+        description: 'Easy billing software for retail shops and restaurants with inventory tracking.',
+        icon: ShoppingBag,
+        color: 'text-green-500'
     },
     {
         title: 'Mobile Apps',
-        description: 'Native & cross-platform apps for iOS and Android.',
+        description: 'Native Android & iOS apps to take your business to your customers\' pockets.',
         icon: Smartphone,
-        color: 'text-green-400'
+        color: 'text-purple-500'
     },
     {
-        title: 'Custom Software',
-        description: 'Tailored solutions to automate your business.',
-        icon: Code,
+        title: 'AI Automation',
+        description: 'Smart bots to handle your customer queries and automate repetitive tasks.',
+        icon: Cpu,
         color: 'text-electric-orange'
     },
     {
-        title: 'UI/UX Design',
-        description: 'Intuitive designs that users fall in love with.',
-        icon: PenTool,
-        color: 'text-pink-400'
-    }
+        title: 'Custom Software',
+        description: 'Tailored CRM and ERP solutions to streamline your unique business operations.',
+        icon: Code,
+        color: 'text-indigo-500'
+    },
 ];
 
 export default function Services() {
@@ -37,15 +49,15 @@ export default function Services() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
                         <h2 className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-4">
-                            Our <span className="text-electric-orange">Expertise</span>
+                            Our <span className="text-electric-orange">Solutions</span>
                         </h2>
                         <p className="text-gray-500 max-w-md">
-                            Comprehensive digital solutions designed to help your business grow and succeed in the modern era.
+                            From securing your premises to digitizing your operations, we provide end-to-end support.
                         </p>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.title}
