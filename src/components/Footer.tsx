@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
 
 export default function Footer() {
     return (
-        <footer className="bg-dark-navy/90 backdrop-blur-3xl border-t border-white/10 text-white relative flex flex-col items-center">
+        <footer className="bg-deep-navy/90 backdrop-blur-3xl border-t border-white/5 text-white relative flex flex-col items-center">
             {/* Background Orbs */}
             <div className="absolute inset-x-0 -top-40 overflow-hidden pointer-events-none">
                 <div className="mx-auto w-[600px] h-[300px] bg-electric-orange/10 blur-[100px]" />
