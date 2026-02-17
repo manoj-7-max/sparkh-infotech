@@ -6,6 +6,7 @@ import Process from '@/components/Process';
 import LocalAuthority from '@/components/LocalAuthority';
 import Pricing from '@/components/Pricing';
 import Testimonials from '@/components/Testimonials';
+import LeadCapture from '@/components/LeadCapture';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -21,6 +22,7 @@ export default function Home() {
       <Process />
       <WhyChooseUs />
       <Testimonials />
+      <LeadCapture />
       <CTA />
       <Footer />
       <WhatsAppButton />
