@@ -1,61 +1,48 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Lightbulb, Target, Palette, Code2, Rocket } from 'lucide-react';
 
 const steps = [
     {
-        id: 1,
-        title: 'Discovery',
-        description: 'We dive deep into your vision, understanding your goals, audience, and challenges to build a solid foundation.',
-        icon: Lightbulb,
-        color: 'text-yellow-400',
-        bg: 'bg-yellow-400/10',
-        border: 'border-yellow-400/20',
-    },
-    {
-        id: 2,
-        title: 'Strategy',
-        description: 'Our team crafts a tailored roadmap, selecting the right technologies and approach to ensure success.',
-        icon: Target,
-        color: 'text-red-500',
-        bg: 'bg-red-500/10',
-        border: 'border-red-500/20',
-    },
-    {
-        id: 3,
         number: '01',
         title: 'Free Consultation',
         description: 'We discuss your business needs. You tell us what you want, and we suggest the best solution.',
         color: 'text-blue-600',
-        bg: 'bg-blue-50'
+        bg: 'bg-blue-50',
+        border: 'border-blue-100'
     },
     {
         number: '02',
         title: 'Project Proposal',
         description: 'We send a detailed plan with clear pricing and timelines. No hidden costs.',
         color: 'text-purple-600',
-        bg: 'bg-purple-50'
+        bg: 'bg-purple-50',
+        border: 'border-purple-100'
     },
     {
         number: '03',
         title: 'Development',
         description: 'Our team starts building your website, app, or installing your security system.',
         color: 'text-yellow-600',
-        bg: 'bg-yellow-50'
+        bg: 'bg-yellow-50',
+        border: 'border-yellow-100'
     },
     {
         number: '04',
         title: 'Launch & Support',
         description: 'We go live! Plus, we provide free support to ensure everything runs smoothly.',
         color: 'text-green-600',
-        bg: 'bg-green-50'
+        bg: 'bg-green-50',
+        border: 'border-green-100'
     }
 ];
 
 export default function Process() {
     return (
-        <section className="py-24 bg-white relative">
+        <section className="py-24 bg-white relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03] pointer-events-none" />
+
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2
@@ -76,23 +63,35 @@ export default function Process() {
                     </motion.p>
                 </div>
 
-                <div className="relative">
-                    {/* Connecting Line (Desktop) */}
-                    <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 hidden lg:block" />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {steps.map((step, index) => (
+                        <motion.div
+                            key={step.number}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1, duration: 0.5 }}
+                            whileHover={{ y: -5 }}
+                            className="relative group bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
+                        >
+                            {/* Connector Line (Desktop) */}
+                            {index !== steps.length - 1 && (
+                                <div className="hidden lg:block absolute top-16 right-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gray-100 to-transparent translate-x-1/2 -z-10" />
+                            )}
 
-                    {/* Connecting Line (Mobile) */}
-                    <div className="absolute top-0 left-8 w-1 h-full bg-gray-200 -translate-x-1/2 lg:hidden" />
+                            <div className={`w-16 h-16 mb-6 rounded-2xl ${step.bg} border ${step.border} flex items-center justify-center text-xl font-bold ${step.color} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                                {step.number}
+                            </div>
 
-                </p>
+                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-electric-blue transition-colors">
+                                {step.title}
+                            </h3>
+                            <p className="text-sm text-gray-500 leading-relaxed">
+                                {step.description}
+                            </p>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
-        </motion.div>
-    ))
-}
-                    </div >
-                </div >
-            </div >
-    {/* Background Glow */ }
-    < div className = "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-96 bg-electric-orange/5 blur-[100px] rounded-full pointer-events-none" />
-        </section >
+        </section>
     );
 }

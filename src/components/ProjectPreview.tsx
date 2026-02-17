@@ -35,7 +35,7 @@ export default function ProjectPreview() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                     <div>
                         <h2 className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-4">
-                            Featured <span className="text-electric-orange">Projects</span>
+                            Featured <span className="text-electric-blue">Projects</span>
                         </h2>
                         <p className="text-gray-500 max-w-md">
                             A glimpse of what we've built for businesses like yours.
@@ -43,7 +43,7 @@ export default function ProjectPreview() {
                     </div>
                     <Link
                         href="/portfolio"
-                        className="group flex items-center gap-2 font-bold text-gray-900 hover:text-electric-orange transition-colors"
+                        className="group flex items-center gap-2 font-bold text-gray-900 hover:text-electric-blue transition-colors"
                     >
                         View All Projects <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
@@ -77,7 +77,7 @@ export default function ProjectPreview() {
                                     ))}
                                 </div>
 
-                                <button className="w-full py-3 rounded-xl border border-gray-200 text-gray-900 font-bold hover:bg-gray-50 hover:border-electric-orange hover:text-electric-orange transition-all flex items-center justify-center gap-2">
+                                <button className="w-full py-3 rounded-xl border border-gray-200 text-gray-900 font-bold hover:bg-gray-50 hover:border-electric-blue hover:text-electric-blue transition-all flex items-center justify-center gap-2">
                                     View Case Study <ExternalLink size={16} />
                                 </button>
                             </div>
