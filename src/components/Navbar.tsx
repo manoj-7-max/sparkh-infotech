@@ -37,8 +37,8 @@ export default function Navbar() {
                 <div className={`
                     flex items-center justify-between w-full max-w-5xl px-6 py-3 rounded-full transition-all duration-500
                     ${isScrolled
-                        ? 'bg-white/80 backdrop-blur-xl border border-gray-200 shadow-lg'
-                        : 'bg-transparent border border-transparent'
+                        ? 'bg-white/90 backdrop-blur-xl border border-gray-200 shadow-lg'
+                        : 'bg-white/50 backdrop-blur-sm border border-gray-100/50'
                     }
                 `}>
                     {/* Logo */}
