@@ -36,10 +36,10 @@ export default function Services() {
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
-                        <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-4">
+                        <h2 className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-4">
                             Our <span className="text-electric-orange">Expertise</span>
                         </h2>
-                        <p className="text-gray-400 max-w-md">
+                        <p className="text-gray-500 max-w-md">
                             Comprehensive digital solutions designed to help your business grow and succeed in the modern era.
                         </p>
                     </div>
@@ -53,13 +53,13 @@ export default function Services() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             whileHover={{ y: -5 }}
-                            className="group p-8 rounded-3xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.05] hover:border-white/10 transition-all duration-300"
+                            className="group p-8 rounded-3xl bg-white border border-gray-100 hover:border-electric-orange/30 shadow-sm hover:shadow-xl transition-all duration-300"
                         >
-                            <div className={`mb-6 p-3 rounded-2xl bg-white/5 w-fit ${service.color}`}>
+                            <div className={`mb-6 p-4 rounded-2xl bg-gray-50 w-fit ${service.color}`}>
                                 <service.icon size={24} />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                            <p className="text-sm text-gray-400 leading-relaxed text-balance">
+                            <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                            <p className="text-sm text-gray-500 leading-relaxed text-balance">
                                 {service.description}
                             </p>
                         </motion.div>

@@ -16,7 +16,7 @@ export default function CTA() {
                     <h2 className="text-4xl md:text-5xl font-bold font-display text-white leading-tight">
                         Ready to <span className="text-electric-orange">Ignite</span> Your Digital Presence?
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-xl text-gray-200 max-w-2xl mx-auto">
                         Join hundreds of successful businesses who have transformed their ideas into reality with Sparkh Infotech.
                     </p>
 
@@ -32,7 +32,7 @@ export default function CTA() {
 
                         <Link
                             href="/portfolio"
-                            className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
+                            className="px-8 py-4 bg-white/10 border border-white/20 text-white rounded-full font-bold text-lg hover:bg-white/20 transition-all backdrop-blur-sm"
                         >
                             View Our Work
                         </Link>

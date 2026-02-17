@@ -60,7 +60,7 @@ export default function Process() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-5xl font-bold font-display text-white mb-6"
+                        className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-6"
                     >
                         Our <span className="text-electric-orange">Process</span>
                     </motion.h2>
@@ -68,7 +68,7 @@ export default function Process() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-gray-400 max-w-2xl mx-auto text-lg"
+                        className="text-gray-500 max-w-2xl mx-auto text-lg"
                     >
                         From concept to reality, we follow a streamlined workflow to deliver excellence.
                     </motion.p>
@@ -76,10 +76,10 @@ export default function Process() {
 
                 <div className="relative">
                     {/* Connecting Line (Desktop) */}
-                    <div className="absolute top-1/2 left-0 w-full h-1 bg-white/10 -translate-y-1/2 hidden lg:block" />
+                    <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 hidden lg:block" />
 
                     {/* Connecting Line (Mobile) */}
-                    <div className="absolute top-0 left-8 w-1 h-full bg-white/10 -translate-x-1/2 lg:hidden" />
+                    <div className="absolute top-0 left-8 w-1 h-full bg-gray-200 -translate-x-1/2 lg:hidden" />
 
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8">
                         {steps.map((step, index) => (
@@ -93,17 +93,17 @@ export default function Process() {
                                 {/* Step Indicator */}
                                 <div className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 ${step.bg} ${step.color} border ${step.border} backdrop-blur-xl shadow-lg`}>
                                     <step.icon size={32} />
-                                    <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-full bg-dark-navy border border-white/10 flex items-center justify-center text-sm font-bold text-white shadow-sm`}>
+                                    <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center text-sm font-bold text-gray-900 shadow-md`}>
                                         {step.id}
                                     </div>
                                 </div>
 
                                 {/* Content */}
                                 <div className="space-y-2 pt-2">
-                                    <h3 className="text-xl font-bold text-white group-hover:text-electric-orange transition-colors duration-300">
+                                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-electric-orange transition-colors duration-300">
                                         {step.title}
                                     </h3>
-                                    <p className="text-gray-400 text-sm leading-relaxed">
+                                    <p className="text-gray-500 text-sm leading-relaxed">
                                         {step.description}
                                     </p>
                                 </div>
