@@ -16,8 +16,16 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "SPARKH INFOTECH | Powering Ideas with Technology",
+  title: {
+    default: "SPARKH INFOTECH | Powering Ideas with Technology",
+    template: "%s | SPARKH INFOTECH",
+  },
   description: "A futuristic IT solutions and digital services brand based in Tamil Nadu, India. Web Development, Apps, Cloud, and more.",
+  icons: {
+    icon: '/icon',
+    apple: '/apple-icon',
+  },
+  themeColor: '#FF6B00',
 };
 
 export default function RootLayout({
