@@ -38,13 +38,13 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 shadow-sm backdrop-blur-sm"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 shadow-sm backdrop-blur-sm"
                     >
                         <span className="flex h-2 w-2 relative">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric-orange opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-electric-orange"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric-blue opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-electric-blue"></span>
                         </span>
-                        <span className="text-xs font-bold text-gray-900 tracking-wide uppercase">Tamil Nadu's #1 Tech Partner</span>
+                        <span className="text-xs font-bold text-gray-900 tracking-wide uppercase">Local Roots. Modern Tech.</span>
                     </motion.div>
 
                     {/* Headline */}
@@ -52,10 +52,10 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight leading-[1.1] text-gray-900"
+                        className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight leading-[1.1] text-dark-charcoal"
                     >
-                        Build Smart. <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-orange to-orange-600">Stay Secure.</span>
+                        Smart Digital & <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-blue to-cyan-500">Security Solutions</span>
                     </motion.h1>
 
                     {/* Subtext */}
@@ -65,7 +65,7 @@ export default function Hero() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
                     >
-                        From advanced <strong>CCTV Security</strong> to high-performance <strong>Websites & Apps</strong>, we power businesses across Chennai, Chengalpattu, and beyond.
+                        Websites, Apps, CCTV, POS & Automation — <strong>All in One Place</strong> for Growing Businesses.
                     </motion.p>
 
                     {/* Trust Badges */}
@@ -76,13 +76,13 @@ export default function Hero() {
                         className="flex flex-wrap justify-center gap-4 md:gap-8 py-4"
                     >
                         <div className="flex items-center gap-2 text-gray-700 font-medium">
-                            <MapPin className="text-electric-orange w-5 h-5" /> Tamil Nadu Based
+                            <MapPin className="text-electric-blue w-5 h-5" /> Tamil Nadu Based
                         </div>
                         <div className="flex items-center gap-2 text-gray-700 font-medium">
-                            <Users className="text-electric-orange w-5 h-5" /> 100+ Happy Clients
+                            <Users className="text-electric-blue w-5 h-5" /> Real Installations
                         </div>
                         <div className="flex items-center gap-2 text-gray-700 font-medium">
-                            <ShieldCheck className="text-electric-orange w-5 h-5" /> 24/7 Support
+                            <ShieldCheck className="text-electric-blue w-5 h-5" /> 24/7 Support
                         </div>
                     </motion.div>
 

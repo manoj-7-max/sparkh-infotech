@@ -5,40 +5,40 @@ import { Monitor, Smartphone, Globe, Code, PenTool, Database, ShieldCheck, Shopp
 
 const services = [
     {
-        title: 'CCTV Security',
-        description: 'Advanced surveillance systems for homes, shops, and offices. Remote monitoring enabled.',
+        title: 'CCTV Installation',
+        description: 'Protect your shop and home with HD cameras. View everything on your mobile from anywhere.',
         icon: ShieldCheck,
-        color: 'text-red-500'
+        color: 'text-blue-600'
     },
     {
-        title: 'Websites',
-        description: 'High-speed business websites that rank on Google and convert visitors into customers.',
+        title: 'Website Development',
+        description: 'Get a professional business website that builds trust and brings in new customers from Google.',
         icon: Globe,
-        color: 'text-blue-500'
+        color: 'text-cyan-600'
     },
     {
-        title: 'POS Systems',
-        description: 'Easy billing software for retail shops and restaurants with inventory tracking.',
+        title: 'POS Billing Software',
+        description: 'Fast, easy billing for retail shops. Manage stock, print bills, and track daily sales effortlessly.',
         icon: ShoppingBag,
-        color: 'text-green-500'
+        color: 'text-green-600'
     },
     {
         title: 'Mobile Apps',
-        description: 'Native Android & iOS apps to take your business to your customers\' pockets.',
+        description: 'Launch your own Android/iOS app. Send notifications and sell directly to customers\' phones.',
         icon: Smartphone,
-        color: 'text-purple-500'
+        color: 'text-purple-600'
+    },
+    {
+        title: 'E-commerce Store',
+        description: 'Start selling online with your own shopping website. Payment gateway and delivery integration included.',
+        icon: ShoppingBag,
+        color: 'text-orange-600'
     },
     {
         title: 'AI Automation',
-        description: 'Smart bots to handle your customer queries and automate repetitive tasks.',
+        description: 'Save time with smart bots. Automate customer replies and repetitive office tasks.',
         icon: Cpu,
-        color: 'text-electric-orange'
-    },
-    {
-        title: 'Custom Software',
-        description: 'Tailored CRM and ERP solutions to streamline your unique business operations.',
-        icon: Code,
-        color: 'text-indigo-500'
+        color: 'text-indigo-600'
     },
 ];
 
