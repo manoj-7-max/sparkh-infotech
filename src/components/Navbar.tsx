@@ -43,8 +43,19 @@ export default function Navbar() {
                 `}>
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group z-50">
-                        <div className="relative flex items-center justify-center w-10 h-10 bg-electric-orange text-white rounded-xl shadow-lg shadow-orange-500/30 group-hover:scale-105 transition-transform duration-300">
-                            <Zap className="w-6 h-6 fill-current" />
+                        <div className="relative h-10 w-auto">
+                            <img
+                                src="/logo.png"
+                                alt="SPARKH INFOTECH"
+                                className="h-full w-auto object-contain"
+                                onError={(e) => {
+                                    e.currentTarget.style.display = 'none';
+                                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                                }}
+                            />
+                            <div className="hidden flex items-center justify-center w-10 h-10 bg-electric-orange text-white rounded-xl shadow-lg">
+                                <Zap className="w-6 h-6 fill-current" />
+                            </div>
                         </div>
                         <span className="text-xl font-bold tracking-tight text-gray-900 font-display">
                             SPARKH
