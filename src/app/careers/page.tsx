@@ -6,22 +6,22 @@ import Link from 'next/link';
 
 export default function Careers() {
     return (
-        <main className="bg-deep-navy min-h-screen">
+        <main className="bg-white min-h-screen">
             <Navbar />
 
             <section className="pt-32 pb-20 px-4 text-center">
                 <div className="container mx-auto max-w-4xl">
-                    <h1 className="text-4xl md:text-5xl font-bold font-display text-white mb-6">
+                    <h1 className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-6">
                         Join Our <span className="text-electric-orange">Team</span>
                     </h1>
-                    <p className="text-gray-400 text-lg mb-12">
+                    <p className="text-gray-600 text-lg mb-12">
                         We are always looking for talented individuals to join our mission of powering ideas with technology.
                     </p>
 
-                    <div className="p-12 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div className="p-12 rounded-3xl bg-white border border-gray-100 shadow-xl backdrop-blur-sm">
                         <div className="text-6xl mb-6">🚀</div>
-                        <h2 className="text-2xl font-bold text-white mb-4">No Openings Right Now</h2>
-                        <p className="text-gray-400 mb-8">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">No Openings Right Now</h2>
+                        <p className="text-gray-500 mb-8">
                             We don't have any specific positions open at the moment, but we're always interested in meeting great people.
                         </p>
                         <Link
