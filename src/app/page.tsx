@@ -4,6 +4,7 @@ import Services from '@/components/Services';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Process from '@/components/Process';
 import LocalAuthority from '@/components/LocalAuthority';
+import ProjectPreview from '@/components/ProjectPreview';
 import Pricing from '@/components/Pricing';
 import Testimonials from '@/components/Testimonials';
 import LeadCapture from '@/components/LeadCapture';
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <LocalAuthority />
       <Services />
+      <ProjectPreview />
       <Pricing />
       <Process />
       <WhyChooseUs />
