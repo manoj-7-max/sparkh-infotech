@@ -17,23 +17,23 @@ export default function Footer() {
                 {/* Brand */}
                 <div className="space-y-6">
                     <Link href="/" className="flex items-center gap-2 group">
-                        <div className="relative h-10 w-auto">
-                            <img
-                                src="/logo.png"
-                                alt="SPARKH INFOTECH"
-                                className="h-full w-auto object-contain"
-                                onError={(e) => {
-                                    e.currentTarget.style.display = 'none';
-                                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                                }}
-                            />
-                            <div className="hidden flex items-center justify-center w-10 h-10 bg-electric-orange text-white rounded-xl shadow-lg">
+                        <img
+                            src="/logo.png"
+                            alt="SPARKH INFOTECH"
+                            className="h-12 w-auto object-contain"
+                            onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                                document.getElementById('footer-fallback-logo')?.classList.remove('hidden');
+                            }}
+                        />
+                        <div id="footer-fallback-logo" className="hidden flex items-center gap-2">
+                            <div className="flex items-center justify-center w-10 h-10 bg-electric-orange text-white rounded-xl shadow-lg">
                                 <Zap className="w-6 h-6 fill-current" />
                             </div>
+                            <span className="text-xl font-bold font-display tracking-wide text-gray-900">
+                                SPARKH <span className="text-electric-orange">INFOTECH</span>
+                            </span>
                         </div>
-                        <span className="text-xl font-bold font-display tracking-wide text-gray-900">
-                            SPARKH <span className="text-electric-orange">INFOTECH</span>
-                        </span>
                     </Link>
                     <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
                         Powering Ideas with Technology. We create futuristic digital solutions that drive innovation and growth for businesses worldwide.
