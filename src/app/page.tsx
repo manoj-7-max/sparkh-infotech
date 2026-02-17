@@ -3,6 +3,8 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Process from '@/components/Process';
+import LocalAuthority from '@/components/LocalAuthority';
+import Pricing from '@/components/Pricing';
 import Testimonials from '@/components/Testimonials';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -13,7 +15,9 @@ export default function Home() {
     <main className="flex min-h-screen flex-col bg-white text-slate-800 overflow-x-hidden">
       <Navbar />
       <Hero />
+      <LocalAuthority />
       <Services />
+      <Pricing />
       <Process />
       <WhyChooseUs />
       <Testimonials />
