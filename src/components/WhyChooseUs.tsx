@@ -39,16 +39,16 @@ const stats = [
 
 export default function WhyChooseUs() {
     return (
-        <section className="py-24 bg-dark-navy relative overflow-hidden">
+        <section className="py-24 bg-white relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-50 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight text-gray-900 mb-4">
                         Why Choose <span className="text-electric-orange">SPARKH?</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-500 max-w-2xl mx-auto">
                         We are more than just a development agency. We are your partners in digital transformation.
                     </p>
                 </div>
@@ -60,19 +60,19 @@ export default function WhyChooseUs() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-electric-orange/30 transition-all duration-300 text-center group"
+                            className="p-8 rounded-2xl bg-white border border-gray-100 hover:border-electric-orange/30 shadow-md hover:shadow-xl transition-all duration-300 text-center group"
                         >
-                            <div className={`p-4 rounded-full bg-white/5 w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform ${feature.color}`}>
+                            <div className={`p-4 rounded-full bg-gray-50 w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform ${feature.color}`}>
                                 <feature.icon className="w-8 h-8" />
                             </div>
-                            <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
-                            <p className="text-sm text-gray-400 leading-relaxed">{feature.description}</p>
+                            <h3 className="text-lg font-bold text-gray-900 mb-3">{feature.title}</h3>
+                            <p className="text-sm text-gray-500 leading-relaxed">{feature.description}</p>
                         </motion.div>
                     ))}
                 </div>
 
                 {/* Stats Counter */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-16">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-100 pt-16">
                     {stats.map((stat, index) => (
                         <motion.div
                             key={stat.label}
@@ -81,7 +81,7 @@ export default function WhyChooseUs() {
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             className="text-center"
                         >
-                            <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 mb-2 font-display">
+                            <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 font-display">
                                 {stat.value}
                             </div>
                             <div className="text-sm font-medium text-electric-orange uppercase tracking-widest">

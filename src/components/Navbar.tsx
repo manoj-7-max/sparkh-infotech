@@ -43,9 +43,12 @@ export default function Navbar() {
                 `}>
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group z-50">
-                        <div className="relative h-10 w-auto">
-                            <img src="/logo-sparkh.png" alt="Sparkh Infotech Logo" className="h-full w-auto object-contain" />
+                        <div className="relative flex items-center justify-center w-10 h-10 bg-electric-orange text-white rounded-xl shadow-lg shadow-orange-500/30 group-hover:scale-105 transition-transform duration-300">
+                            <Zap className="w-6 h-6 fill-current" />
                         </div>
+                        <span className="text-xl font-bold tracking-tight text-gray-900 font-display">
+                            SPARKH
+                        </span>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -87,7 +90,7 @@ export default function Navbar() {
                     {/* Mobile Menu Toggle */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="md:hidden p-2 text-gray-700 hover:text-black z-50"
+                        className="md:hidden p-2 text-gray-900 hover:text-electric-orange z-50"
                     >
                         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
@@ -101,7 +104,7 @@ export default function Navbar() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-40 bg-deep-navy/95 backdrop-blur-2xl flex items-center justify-center md:hidden"
+                        className="fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl flex items-center justify-center md:hidden"
                     >
                         <div className="flex flex-col items-center gap-8 p-4">
                             {navLinks.map((link, i) => (
@@ -114,7 +117,7 @@ export default function Navbar() {
                                     <Link
                                         href={link.href}
                                         onClick={() => setIsMobileMenuOpen(false)}
-                                        className="text-3xl font-display font-bold text-white/80 hover:text-white hover:text-electric-orange transition-colors"
+                                        className="text-3xl font-display font-bold text-gray-900 hover:text-electric-orange transition-colors"
                                     >
                                         {link.name}
                                     </Link>
@@ -128,7 +131,7 @@ export default function Navbar() {
                                 <Link
                                     href="/contact"
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="block mt-4 px-8 py-3 bg-electric-orange text-white rounded-full font-bold text-lg"
+                                    className="block mt-4 px-8 py-3 bg-electric-orange text-white rounded-full font-bold text-lg shadow-xl shadow-orange-500/20"
                                 >
                                     Start Project
                                 </Link>
