@@ -43,23 +43,23 @@ export default function Navbar() {
                 `}>
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group z-50">
-                        <img
-                            src="/logo.png"
-                            alt="SPARKH INFOTECH"
-                            className="h-12 w-auto object-contain"
-                            onError={(e) => {
-                                e.currentTarget.style.display = 'none';
-                                document.getElementById('navbar-fallback-logo')?.classList.remove('hidden');
-                            }}
-                        />
-                        <div id="navbar-fallback-logo" className="hidden flex items-center gap-2">
-                            <div className="flex items-center justify-center w-10 h-10 bg-electric-orange text-white rounded-xl shadow-lg">
+                        <div className="relative h-10 w-auto">
+                            <img
+                                src="/logo.png"
+                                alt="SPARKH INFOTECH"
+                                className="h-full w-auto object-contain"
+                                onError={(e) => {
+                                    e.currentTarget.style.display = 'none';
+                                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                                }}
+                            />
+                            <div className="hidden flex items-center justify-center w-10 h-10 bg-electric-orange text-white rounded-xl shadow-lg">
                                 <Zap className="w-6 h-6 fill-current" />
                             </div>
-                            <span className="text-xl font-bold tracking-tight text-gray-900 font-display">
-                                SPARKH
-                            </span>
                         </div>
+                        <span className="text-xl font-bold tracking-tight text-gray-900 font-display">
+                            SPARKH
+                        </span>
                     </Link>
 
                     {/* Desktop Navigation */}

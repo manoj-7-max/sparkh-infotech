@@ -1,45 +1,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Monitor, Smartphone, Globe, Code, PenTool, Database, ShieldCheck, ShoppingBag, Cpu } from 'lucide-react';
+import { Monitor, Smartphone, Globe, Code, PenTool, Database } from 'lucide-react';
 
 const services = [
     {
-        title: 'CCTV Installation',
-        description: 'Protect your shop and home with HD cameras. View everything on your mobile from anywhere.',
-        icon: ShieldCheck,
-        color: 'text-blue-600'
-    },
-    {
-        title: 'Website Development',
-        description: 'Get a professional business website that builds trust and brings in new customers from Google.',
+        title: 'Websites',
+        description: 'Blazing fast, SEO-optimized web experiences.',
         icon: Globe,
-        color: 'text-cyan-600'
-    },
-    {
-        title: 'POS Billing Software',
-        description: 'Fast, easy billing for retail shops. Manage stock, print bills, and track daily sales effortlessly.',
-        icon: ShoppingBag,
-        color: 'text-green-600'
+        color: 'text-blue-400'
     },
     {
         title: 'Mobile Apps',
-        description: 'Launch your own Android/iOS app. Send notifications and sell directly to customers\' phones.',
+        description: 'Native & cross-platform apps for iOS and Android.',
         icon: Smartphone,
-        color: 'text-purple-600'
+        color: 'text-green-400'
     },
     {
-        title: 'E-commerce Store',
-        description: 'Start selling online with your own shopping website. Payment gateway and delivery integration included.',
-        icon: ShoppingBag,
-        color: 'text-orange-600'
+        title: 'Custom Software',
+        description: 'Tailored solutions to automate your business.',
+        icon: Code,
+        color: 'text-electric-orange'
     },
     {
-        title: 'AI Automation',
-        description: 'Save time with smart bots. Automate customer replies and repetitive office tasks.',
-        icon: Cpu,
-        color: 'text-indigo-600'
-    },
+        title: 'UI/UX Design',
+        description: 'Intuitive designs that users fall in love with.',
+        icon: PenTool,
+        color: 'text-pink-400'
+    }
 ];
 
 export default function Services() {
@@ -49,15 +37,15 @@ export default function Services() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
                         <h2 className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-4">
-                            Our <span className="text-electric-orange">Solutions</span>
+                            Our <span className="text-electric-orange">Expertise</span>
                         </h2>
                         <p className="text-gray-500 max-w-md">
-                            From securing your premises to digitizing your operations, we provide end-to-end support.
+                            Comprehensive digital solutions designed to help your business grow and succeed in the modern era.
                         </p>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.title}

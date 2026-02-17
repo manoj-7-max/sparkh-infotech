@@ -1,42 +1,38 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Clock, ShieldCheck, Users, Banknote, MapPin, Zap } from 'lucide-react';
+import { Zap, Clock, ShieldCheck, Users, Code, Award, Rocket } from 'lucide-react';
 
 const features = [
     {
-        icon: Banknote,
-        title: 'Affordable Pricing',
-        description: 'Premium tech solutions that fit your budget. No hidden costs, just honest pricing.',
-        color: 'text-green-600',
-        bg: 'bg-green-50'
+        icon: Rocket,
+        title: 'Futuristic Innovation',
+        description: 'We leverage cutting-edge tech like AI, Blockchain, and IoT to build scalable solutions.',
+        color: 'text-purple-500',
     },
     {
-        icon: MapPin,
-        title: 'Local Support',
-        description: 'We are based in Tamil Nadu. Our team is available for face-to-face meetings and on-site support.',
-        color: 'text-blue-600',
-        bg: 'bg-blue-50'
-    },
-    {
-        icon: Zap,
-        title: 'Fast Installation',
-        description: 'We value your time. Get your CCTV or Software up and running in record time.',
-        color: 'text-yellow-600',
-        bg: 'bg-yellow-50'
+        icon: Clock,
+        title: 'Lightning Fast Delivery',
+        description: 'Agile methodologies ensure we deliver high-quality products within tight deadlines.',
+        color: 'text-electric-orange',
     },
     {
         icon: ShieldCheck,
-        title: 'After-Sales Service',
-        description: 'Our relationship doesn\'t end with delivery. We provide focused support to keep your business running.',
-        color: 'text-purple-600',
-        bg: 'bg-purple-50'
+        title: 'Enterprise-Grade Security',
+        description: 'Security-first approach with robust data protection and compliance standards.',
+        color: 'text-green-500',
+    },
+    {
+        icon: Users,
+        title: 'Transparent Collaboration',
+        description: 'We believe in open communication and detailed reporting at every stage.',
+        color: 'text-blue-500',
     },
 ];
 
 const stats = [
-    { value: '100+', label: 'Projects Completed' },
-    { value: '50+', label: 'Local Clients' },
+    { value: '50+', label: 'Projects Delivered' },
+    { value: '30+', label: 'Happy Clients' },
     { value: '5+', label: 'Years Experience' },
     { value: '24/7', label: 'Support' },
 ];
@@ -45,15 +41,15 @@ export default function WhyChooseUs() {
     return (
         <section className="py-24 bg-white relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-[0.03]" />
+            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-50 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight text-dark-charcoal mb-4">
-                        Why Choose <span className="text-electric-blue">SPARKH?</span>
+                    <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight text-gray-900 mb-4">
+                        Why Choose <span className="text-electric-orange">SPARKH?</span>
                     </h2>
                     <p className="text-gray-500 max-w-2xl mx-auto">
-                        We combine the expertise of a big tech agency with the care and trust of a local partner.
+                        We are more than just a development agency. We are your partners in digital transformation.
                     </p>
                 </div>
 
@@ -64,9 +60,9 @@ export default function WhyChooseUs() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className="p-8 rounded-3xl bg-white border border-gray-100 hover:border-electric-orange/30 shadow-sm hover:shadow-xl transition-all duration-300 text-center group"
+                            className="p-8 rounded-2xl bg-white border border-gray-100 hover:border-electric-orange/30 shadow-md hover:shadow-xl transition-all duration-300 text-center group"
                         >
-                            <div className={`p-4 rounded-2xl w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform ${feature.bg} ${feature.color}`}>
+                            <div className={`p-4 rounded-full bg-gray-50 w-16 h-16 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform ${feature.color}`}>
                                 <feature.icon className="w-8 h-8" />
                             </div>
                             <h3 className="text-lg font-bold text-gray-900 mb-3">{feature.title}</h3>
