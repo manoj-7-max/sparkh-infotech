@@ -20,17 +20,17 @@ const features = [
     },
     {
         icon: Zap,
-        title: 'Fast Delivery',
-        description: 'We value your time. Get your website or app live in record time without compromising quality.',
-        color: 'text-electric-orange',
-        bg: 'bg-orange-50'
+        title: 'Fast Installation',
+        description: 'We value your time. Get your CCTV or Software up and running in record time.',
+        color: 'text-yellow-600',
+        bg: 'bg-yellow-50'
     },
     {
         icon: ShieldCheck,
-        title: 'Reliable Security',
-        description: 'From CCTV to cyber security, we ensure your business assets are always protected.',
-        color: 'text-red-600',
-        bg: 'bg-red-50'
+        title: 'After-Sales Service',
+        description: 'Our relationship doesn\'t end with delivery. We provide focused support to keep your business running.',
+        color: 'text-purple-600',
+        bg: 'bg-purple-50'
     },
 ];
 
@@ -49,8 +49,8 @@ export default function WhyChooseUs() {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight text-gray-900 mb-4">
-                        Why Choose <span className="text-electric-orange">SPARKH?</span>
+                    <h2 className="text-4xl md:text-5xl font-bold font-display tracking-tight text-dark-charcoal mb-4">
+                        Why Choose <span className="text-electric-blue">SPARKH?</span>
                     </h2>
                     <p className="text-gray-500 max-w-2xl mx-auto">
                         We combine the expertise of a big tech agency with the care and trust of a local partner.
